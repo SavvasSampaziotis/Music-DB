@@ -98,7 +98,6 @@ create table Included_In (
 album_title varchar(50) not null,
 publisher varchar(50) not null,
 song_title varchar(50),
-artist_name varchar(50) not null,
 song_order int check (song_order >0),
 
 foreign key (album_title,publisher) references Album(album_title,publisher) on delete cascade,
