@@ -22,7 +22,7 @@ INSERT INTO `album` (`album_title`, `publisher`, `release_date`) VALUES
 	('The Red Hot Chilli Peppers', 'EMI', '1984-08-10');
 /*!40000 ALTER TABLE `album` ENABLE KEYS */;
 
--- Dumping data for table musicdb.artist: ~0 rows (approximately)
+-- Dumping data for table musicdb.artist: ~14 rows (approximately)
 DELETE FROM `artist`;
 /*!40000 ALTER TABLE `artist` DISABLE KEYS */;
 INSERT INTO `artist` (`artist_name`, `debut`) VALUES
@@ -42,7 +42,7 @@ INSERT INTO `artist` (`artist_name`, `debut`) VALUES
 	('Walk off the Earth', '2006-00-00');
 /*!40000 ALTER TABLE `artist` ENABLE KEYS */;
 
--- Dumping data for table musicdb.band: ~0 rows (approximately)
+-- Dumping data for table musicdb.band: ~7 rows (approximately)
 DELETE FROM `band`;
 /*!40000 ALTER TABLE `band` DISABLE KEYS */;
 INSERT INTO `band` (`artist_name`, `logo`, `founding_date`, `split_date`) VALUES
@@ -55,7 +55,7 @@ INSERT INTO `band` (`artist_name`, `logo`, `founding_date`, `split_date`) VALUES
 	('Soski', NULL, '2014-00-00', NULL);
 /*!40000 ALTER TABLE `band` ENABLE KEYS */;
 
--- Dumping data for table musicdb.genre: ~0 rows (approximately)
+-- Dumping data for table musicdb.genre: ~10 rows (approximately)
 DELETE FROM `genre`;
 /*!40000 ALTER TABLE `genre` DISABLE KEYS */;
 INSERT INTO `genre` (`artist_name`, `genre`) VALUES
@@ -74,6 +74,12 @@ INSERT INTO `genre` (`artist_name`, `genre`) VALUES
 -- Dumping data for table musicdb.has_created: ~0 rows (approximately)
 DELETE FROM `has_created`;
 /*!40000 ALTER TABLE `has_created` DISABLE KEYS */;
+INSERT INTO `has_created` (`artist_name`, `song_title`) VALUES
+	('Queen', 'Bohemian Rapsody'),
+	('Queen', 'We Will Rock You'),
+	('Red Hot Chili Peppers', 'Buckle Down'),
+	('Queen', 'We Are the Champions'),
+	('Red Hot Chili Peppers', 'Baby Appeal');
 /*!40000 ALTER TABLE `has_created` ENABLE KEYS */;
 
 -- Dumping data for table musicdb.included_in: ~5 rows (approximately)
@@ -98,7 +104,7 @@ INSERT INTO `is_available` (`store_name`, `quantity`, `price`, `album_title`, `p
 	('PUBLIC', 90, 149.99, 'News of the World', 'Wessex Studios', 'Thessalonikis-Moudanion', 10);
 /*!40000 ALTER TABLE `is_available` ENABLE KEYS */;
 
--- Dumping data for table musicdb.musician: ~0 rows (approximately)
+-- Dumping data for table musicdb.musician: ~7 rows (approximately)
 DELETE FROM `musician`;
 /*!40000 ALTER TABLE `musician` DISABLE KEYS */;
 INSERT INTO `musician` (`artist_name`, `birthday`, `nationality`) VALUES
@@ -111,7 +117,7 @@ INSERT INTO `musician` (`artist_name`, `birthday`, `nationality`) VALUES
 	('Skerlidou Sofia', NULL, 'GR');
 /*!40000 ALTER TABLE `musician` ENABLE KEYS */;
 
--- Dumping data for table musicdb.role: ~0 rows (approximately)
+-- Dumping data for table musicdb.role: ~12 rows (approximately)
 DELETE FROM `role`;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`musician_name`, `band_name`, `role`) VALUES
@@ -153,7 +159,7 @@ INSERT INTO `store` (`store_name`, `phone`, `street`, `number`) VALUES
 	('Studio 56', 2310279688, 'Dimitriou Gounari', 46);
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 
--- Dumping data for table musicdb.takes_part_in: ~0 rows (approximately)
+-- Dumping data for table musicdb.takes_part_in: ~9 rows (approximately)
 DELETE FROM `takes_part_in`;
 /*!40000 ALTER TABLE `takes_part_in` DISABLE KEYS */;
 INSERT INTO `takes_part_in` (`band_name`, `musician_name`, `join_date`, `breakaway_date`) VALUES
