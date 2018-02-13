@@ -1,9 +1,9 @@
 
 # 1
-SELECT * FROM album NATURAL JOIN included_in;
+SELECT * FROM album NATURAL JOIN included_in NATURAL JOIN song;
 
 # 2
-SELECT distinct has_created.artist_name from has_created;
+SELECT DISTINCT has_created.artist_name FROM has_created;
 
 # 3
 SELECT band.artist_name, band.founding_date, artist.debut, band.split_date
@@ -39,18 +39,18 @@ SELECT has_created.song_title, included_in.album_title, has_created.artist_name
 	INNER JOIN included_in ON included_in.song_title=has_created.song_title;
 
 # 9 
-SELECT  artist.artist_name
+SELECT  artist.artist_name 
 	FROM artist
-	WHERE artist.artist_name NOT IN ( SELECT DISTINCT has_created.artist_name FROM has_created );
+	WHERE artist.artist_name IN ( SELECT DISTINCT has_created.artist_name FROM has_created );
 
 # 10 
-CREATE OR REPLACE VIEW album_duration 
+CREATE OR REPLACE VIEW band_info
 	AS SELECT artist.debut, band.logo, band.founding_date, band.split_date
 	FROM artist 
 	NATURAL JOIN band
 	ORDER BY debut;
 
-SELECT * FROM album_duration;
+SELECT * FROM band_info;
 	
 	
 	
