@@ -51,9 +51,3 @@ CREATE OR REPLACE VIEW band_info
 	ORDER BY debut;
 
 SELECT * FROM band_info;
-	
-	
-	
-	
-	
-	
