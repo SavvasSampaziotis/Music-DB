@@ -43,7 +43,6 @@ SELECT  artist.artist_name
 	FROM artist
 	WHERE artist.artist_name NOT IN ( SELECT DISTINCT has_created.artist_name FROM has_created );
 
-	
 # 10 
 CREATE OR REPLACE VIEW album_duration 
 	AS SELECT artist.debut, band.logo, band.founding_date, band.split_date
